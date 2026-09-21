@@ -325,8 +325,7 @@ const Garden = (() => {
     wrap.style.setProperty('--x', `${slot.x}%`);
     wrap.style.setProperty('--y', `${slot.y}%`);
     wrap.style.setProperty('--w', `${Math.round(slot.w * widthScale())}px`);
-    wrap.style.setProperty('--o', (0.45 + slot.depth * 0.5).toFixed(2));
-    wrap.style.setProperty('--blur', `${((1 - slot.depth) * 1.6).toFixed(2)}px`);
+    wrap.style.setProperty('--o', (0.4 + slot.depth * 0.55).toFixed(2));
     wrap.style.setProperty('--depth', slot.depth);
     wrap.style.zIndex = Math.round(slot.depth * 10);
 
@@ -411,7 +410,7 @@ const Garden = (() => {
   /* céu */
 
   function resize() {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     width = window.innerWidth;
     height = window.innerHeight;
     [starsCanvas, petalsCanvas].forEach((canvas) => {
