@@ -91,8 +91,8 @@ const Music = (() => {
     setLevelIcon();
 
     toggleBtn.addEventListener('click', () => {
-      player.classList.toggle('is-open');
-      if (!player.classList.contains('is-playing') && audio.paused) play(false);
+      const isOpen = player.classList.toggle('is-open');
+      if (isOpen && !player.classList.contains('is-playing') && audio.paused) play(false);
     });
     playBtn.addEventListener('click', toggle);
     muteBtn.addEventListener('click', toggleMute);

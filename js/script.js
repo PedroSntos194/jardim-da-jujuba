@@ -104,7 +104,7 @@ const StoryIcons = (() => {
   function update() {
     light('amor');
     if (Progress.has('ch1-done')) light('crescimento');
-    if (Progress.has('memorias')) light('florescer');
+    if (Progress.has('contador')) light('florescer');
   }
 
   function show() {
@@ -465,19 +465,6 @@ const Chapter2 = (() => {
   return { init };
 })();
 
-/* ---------- linha do tempo ---------- */
-
-const Timeline = (() => {
-  function init() {
-    $$('.timeline__item').forEach((item, i) => {
-      const slot = item.querySelector('.timeline__flower');
-      slot.appendChild(Flowers.create(item.dataset.flower || 'daisy', { seed: 200 + i * 9 }));
-    });
-  }
-
-  return { init };
-})();
-
 /* ---------- contador ---------- */
 
 const Counter = (() => {
@@ -745,7 +732,6 @@ const Final = (() => {
 
     Garden.setPetals(20);
     Progress.unlock('final');
-    Progress.unlock('memorias');
     StoryIcons.update();
     playing = false;
   }
@@ -939,7 +925,12 @@ const Cursor = (() => {
 /* ---------- início ---------- */
 
 function restoreProgress() {
-  Progress.data.unlocked.forEach((id) => Unlock.unlock(id, { silent: true }));
+  // Quem já chegou à antiga linha do tempo pode continuar direto no contador.
+  if (Progress.has('memorias')) Progress.unlock('contador');
+  // Restaura só as seções do jardim; marcos como "final" não abrem sobreposições.
+  $$('#site .section').forEach((section) => {
+    if (Progress.has(section.id)) Unlock.unlock(section.id, { silent: true });
+  });
   Garden.restore(Progress.data.planted);
   if (Progress.has('carta-lida')) $('#open-final').hidden = false;
   if (Progress.data.found.includes('star')) $('#secret-star').classList.add('is-found');
@@ -960,7 +951,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   Chapter1.init();
   Chapter2.init();
-  Timeline.init();
   Counter.init();
   Bouquet.init();
   Path.init();

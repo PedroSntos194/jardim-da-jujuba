@@ -1546,84 +1546,6 @@ body.has-cursor .cursor {
   aspect-ratio: 140 / 220;
 }
 
-/* ---------- linha do tempo ---------- */
-
-.timeline {
-  list-style: none;
-  margin: 0;
-  padding: 0 0 0 3rem;
-  position: relative;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 0.7rem;
-  top: 0.4rem;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, rgba(169, 185, 158, 0.45), rgba(169, 185, 158, 0.06));
-}
-
-.timeline__item {
-  position: relative;
-  padding-bottom: clamp(3rem, 9vh, 5rem);
-}
-
-.timeline__icon {
-  position: absolute;
-  left: -3rem;
-  top: 0.15rem;
-  display: grid;
-  place-items: center;
-  width: 1.4rem;
-  height: 1.4rem;
-  background: var(--bg-1);
-}
-
-.timeline__icon .lucide {
-  width: 14px;
-  height: 14px;
-  stroke: var(--green-light);
-  stroke-width: 1.2;
-}
-
-.timeline__flower {
-  position: absolute;
-  left: -3.4rem;
-  top: 2.4rem;
-  width: 38px;
-  height: 70px;
-}
-
-.timeline__date {
-  display: block;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--green-light);
-  margin-bottom: 0.2rem;
-}
-
-.timeline__title {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(1.5rem, 4.6vw, 1.95rem);
-  line-height: 1.2;
-  color: var(--cream);
-}
-
-.timeline__text {
-  margin-top: 0.4rem;
-  font-size: 0.95rem;
-  color: var(--text-soft);
-}
-
-.timeline__item--today .timeline__icon .lucide {
-  stroke: var(--tulip);
-  filter: drop-shadow(0 0 6px rgba(217, 140, 149, 0.6));
-}
-
 /* ---------- contador ---------- */
 
 .counter {
@@ -2548,32 +2470,6 @@ body.is-dark .garden {
 
   .line p {
     padding-bottom: 2.25rem;
-  }
-
-  .timeline {
-    padding-left: 4.5rem;
-  }
-
-  .timeline::before {
-    left: 1.1rem;
-  }
-
-  .timeline__icon {
-    left: -4.5rem;
-    width: 2.2rem;
-    height: 2.2rem;
-  }
-
-  .timeline__icon .lucide {
-    width: 16px;
-    height: 16px;
-  }
-
-  .timeline__flower {
-    left: -4.55rem;
-    top: 3.2rem;
-    width: 44px;
-    height: 80px;
   }
 
   .story-icons {

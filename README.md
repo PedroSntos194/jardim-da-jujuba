@@ -9,7 +9,6 @@ Um presente digital feito à mão: um jardim que começa vazio e vai florescendo
    const dataInicioNamoro = new Date("2024-01-01T00:00:00"); // ← a data de vocês
    ```
 2. **A música** — salve o arquivo como `assets/music/nossa-musica.mp3`.
-3. **A linha do tempo** — em `index.html`, procure `<ol class="timeline">` e troque as datas (`— / — / ——`) e os textos de cada memória.
 
 ## Rodar localmente
 
