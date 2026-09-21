@@ -1,0 +1,6 @@
+Salve a música de vocês nesta pasta com o nome exato:
+
+  nossa-musica.mp3
+
+O player procura por assets/music/nossa-musica.mp3.
+Enquanto o arquivo não existir, o player mostra "coloque a música em assets/music".

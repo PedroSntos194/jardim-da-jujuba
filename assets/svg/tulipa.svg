@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 220" class="flower flower--tulip">
+  <defs>
+    <linearGradient id="g-tulip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAA6AE"/><stop offset="1" stop-color="#C67A84"/></linearGradient>
+    <linearGradient id="g-tulip-2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B4BA"/><stop offset="1" stop-color="#CF8690"/></linearGradient>
+    <linearGradient id="g-tulip-dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C97F88"/><stop offset="1" stop-color="#A25C66"/></linearGradient>
+    <linearGradient id="g-lily" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBE5F1"/><stop offset="1" stop-color="#BDB0CD"/></linearGradient>
+    <linearGradient id="g-lily-soft" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DDD5E6"/><stop offset="1" stop-color="#AFA2BF"/></linearGradient>
+    <linearGradient id="g-leaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9B99E"/><stop offset="1" stop-color="#5F6F55"/></linearGradient>
+    <radialGradient id="g-core"><stop offset="0" stop-color="#F3DA92"/><stop offset=".7" stop-color="#E2BC5C"/><stop offset="1" stop-color="#C99C3F"/></radialGradient>
+    <radialGradient id="g-halo"><stop offset="0" stop-color="#FFF9F2" stop-opacity="0"/><stop offset="1" stop-color="#FFF9F2" stop-opacity="0"/></radialGradient>
+  </defs>
+  <style>
+    .flower__stem{fill:#5E6F55}.flower__stem-hl{fill:none;stroke:#93A487;stroke-width:.6;stroke-linecap:round;opacity:.55}
+    .flower__leaf path:first-child{fill:url(#g-leaf);stroke:#4A5843;stroke-width:.5;stroke-opacity:.6}.flower__vein{fill:none;stroke:#3F4C39;stroke-width:.6;opacity:.5}
+    .flower__calyx path{fill:#6F8064;stroke:#4A5843;stroke-width:.4}
+    .flower--daisy .flower__petal{stroke:#CBC2AE;stroke-width:.5;stroke-opacity:.55;stroke-linejoin:round}.flower--daisy .flower__petal--back{stroke-opacity:.35}
+    .flower__core{fill:url(#g-core)}.flower__core-shade{fill:#B8862E;opacity:.32}.flower__dots{fill:#A8792A;opacity:.6}
+    .flower--tulip .flower__petal{stroke:#B56C76;stroke-width:.5;stroke-opacity:.45}.flower--tulip .flower__petal--back{fill:url(#g-tulip-dark)}
+    .flower--tulip .flower__petal--l{transform-box:fill-box;transform-origin:50% 100%;transform:rotate(var(--o))}.flower--tulip .flower__petal--r{transform-box:fill-box;transform-origin:50% 100%;transform:rotate(var(--o))}
+    .flower__petal-hl{fill:none;stroke:rgba(255,249,242,.4);stroke-width:.7;stroke-linecap:round}.flower__base{fill:#B26D77}
+    .flower--lily .flower__petal > path:first-child{fill:url(#g-lily);stroke:#B4A6C4;stroke-width:.5;stroke-opacity:.6}.flower--lily .flower__petal--alt > path:first-child{fill:url(#g-lily-soft)}
+    .flower--lily .flower__vein{stroke:#A697B8;opacity:.45}.flower__spots{fill:#9F86B3;opacity:.5}
+    .flower__stamen{fill:none;stroke:#B8A66A;stroke-width:1}.flower__anther{fill:#D9B458}.flower__pistil{fill:#C8B36A}
+  </style>
+<g class="flower__stem-group"><path class="flower__stem" d="M57.8 214 C 54.9 171.8, 58.1 132.2, 58.7 90 L 61.3 90 C 61.2 132.2, 58.9 171.8, 62.2 214 Z"/><path class="flower__stem-hl" d="M59.1 208 C 56.2 171.8, 59.2 132.2, 59.7 96"/></g><g class="flower__leaf flower__leaf--l"><g transform="translate(59.3 203.2) rotate(5.0) scale(1.1)"><path d="M0 0 C -14 -10, -32 -40, -34 -78 C -33 -88, -30 -92, -27 -90 C -16 -70, -6 -36, 0 0 Z"/><path class="flower__vein" d="M-1 -4 C -12 -30, -22 -56, -28 -84"/></g></g><g class="flower__leaf flower__leaf--r"><g transform="translate(58.7 187.5) rotate(7.7) scale(0.9)"><path d="M0 0 C 12 -8, 26 -30, 26 -56 C 26 -62, 24 -66, 21 -64 C 12 -46, 4 -22, 0 0 Z"/><path class="flower__vein" d="M1 -4 C 9 -22, 17 -42, 22 -60"/></g></g><g class="flower__head"><g transform="translate(60 90) rotate(-6.6)"><circle class="flower__halo" r="34" cy="-30"/><g class="flower__petals">
+      <path class="flower__petal flower__petal--back" d="M-19 0 C -25 -28.3, -14 -51.0, -3 -57.6 C 2 -60.4, 8 -54.7, 12 -51.9 C 22 -37.7, 24 -18.9, 19 0 Z"/>
+      <path class="flower__petal flower__petal--l" style="--o:-9.1deg" fill="url(#g-tulip)" d="M-19 0 C -27 -24.5, -21 -47.2, -9 -56.6 C -6 -54.7, -2 -43.4, 0 -28.3 C 1 -15.1, 0.5 -5.7, 0 0 Z"/>
+      <path class="flower__petal flower__petal--r" style="--o:8.5deg" fill="url(#g-tulip)" d="M19 0 C 27 -24.5, 21 -47.2, 9 -56.6 C 6 -54.7, 2 -43.4, 0 -28.3 C -1 -15.1, -0.5 -5.7, 0 0 Z"/>
+      <path class="flower__petal flower__petal--front" fill="url(#g-tulip)" d="M-13 0 C -19 -22.6, -11 -43.4, -1.4 -51.0 C 9 -43.4, 19 -22.6, 13 0 Z"/>
+      <path class="flower__petal-hl" d="M-8 -8 C -12 -20.8, -8 -35.9, -1 -45.3"/>
+      <ellipse class="flower__base" cx="0" cy="0" rx="19" ry="4.5"/></g></g></g>
+</svg>

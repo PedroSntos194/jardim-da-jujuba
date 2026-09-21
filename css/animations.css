@@ -1,0 +1,198 @@
+/* movimento das flores */
+
+.flower.is-swaying {
+  animation: sway var(--sway-dur, 6s) ease-in-out infinite;
+  animation-delay: var(--sway-delay, 0s);
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.4deg) translateX(-0.4px); }
+  55% { transform: rotate(1.7deg) translateX(0.4px); }
+}
+
+@keyframes leaf-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2.5deg); }
+}
+
+.garden__leaf--left {
+  animation: leaf-sway 9s ease-in-out infinite;
+}
+
+.garden__leaf--right {
+  animation: leaf-sway 11s ease-in-out infinite reverse;
+}
+
+/* céu */
+
+.intro-star {
+  animation: twinkle var(--d, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.9); }
+  50% { opacity: var(--o, 0.9); transform: scale(1.1); }
+}
+
+.firefly {
+  animation:
+    firefly-glow var(--g, 3s) ease-in-out infinite,
+    firefly-drift var(--d, 14s) ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes firefly-glow {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes firefly-drift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(var(--dx1), var(--dy1)); }
+  50% { transform: translate(var(--dx2), var(--dy2)); }
+  75% { transform: translate(var(--dx3), var(--dy3)); }
+  100% { transform: translate(var(--dx4), var(--dy4)); }
+}
+
+/* dicas */
+
+@keyframes hint-bob {
+  0%, 100% { transform: translate(-50%, 0); opacity: 0.5; }
+  50% { transform: translate(-50%, 6px); opacity: 0.9; }
+}
+
+/* entradas */
+
+@keyframes section-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes tag-in {
+  from { opacity: 0; transform: translateY(16px) rotate(calc(var(--tilt, 0deg) - 3deg)); }
+  to { opacity: 1; transform: translateY(0) rotate(var(--tilt, 0deg)); }
+}
+
+@keyframes line-draw {
+  0% { transform: scaleY(0); opacity: 0; }
+  35% { opacity: 1; }
+  70% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+@keyframes bouquet-pop {
+  from { transform: translateX(-50%) rotate(var(--rot)) translateY(calc(var(--lift) + 40px)) scale(0.8); opacity: 0; }
+  to { transform: translateX(-50%) rotate(var(--rot)) translateY(var(--lift)) scale(1); opacity: 1; }
+}
+
+/* respirações */
+
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.96); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
+}
+
+@keyframes icon-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes soft-glow {
+  0%, 100% { text-shadow: 0 0 0 rgba(217, 140, 149, 0); }
+  50% { text-shadow: 0 0 28px rgba(217, 140, 149, 0.45); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.12); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.08); }
+  56% { transform: scale(1); }
+}
+
+@keyframes note-wiggle {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+/* contador */
+
+@keyframes tick {
+  0% { transform: translateY(-6px); opacity: 0.2; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* presente */
+
+@keyframes spark-fly {
+  0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0.2); opacity: 0; }
+}
+
+/* semente (fallback sem GSAP) */
+
+.seed.is-css .seed__ground {
+  animation: ground-draw 1.2s var(--ease-out) forwards;
+}
+
+.seed.is-css .seed__seed {
+  animation: seed-drop 1.4s cubic-bezier(0.3, 0, 0.2, 1) 0.6s forwards;
+}
+
+@keyframes ground-draw {
+  to { transform: scaleX(1); }
+}
+
+@keyframes seed-drop {
+  0% { transform: translate(-50%, -140px); opacity: 0; }
+  30% { opacity: 1; }
+  80% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 4px); opacity: 0; }
+}
+
+/* menos movimento */
+
+/* tira só o movimento contínuo; crescimento e fades continuam, porque são o próprio presente */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .flower.is-swaying,
+  .garden__leaf,
+  .firefly,
+  .intro-star,
+  .chapter__hint .lucide,
+  .scroll-hint,
+  .always__glow,
+  .always__icon,
+  .cativou__heart,
+  .gift__leaf,
+  .invite__line,
+  .final__heart.is-visible,
+  .player.is-playing .player__note,
+  .counter__value.is-ticking {
+    animation: none !important;
+  }
+
+  .section.is-unlocking,
+  .tag,
+  .bouquet__flower {
+    animation-duration: 0.01ms !important;
+  }
+
+  .intro-star {
+    opacity: 0.6;
+  }
+
+  .firefly {
+    opacity: 0.5;
+  }
+
+  .garden-flower {
+    transition: none;
+  }
+}
